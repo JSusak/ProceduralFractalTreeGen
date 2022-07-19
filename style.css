@@ -16,6 +16,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  transition: all 0.4s ease-in-out;
 }
 body > div {
   margin: 0;
@@ -88,6 +89,10 @@ body > div {
   margin-bottom: 10px;
 }
 
+.padding {
+  margin-bottom: 10px;
+}
+
 .slider:hover {
   opacity: 1;
 }
@@ -97,13 +102,16 @@ body > div {
   appearance: none;
   width: 25px;
   height: 25px;
-  background: #4caf50;
+  background: black;
+}
+[type="checkbox"] {
+  vertical-align: middle;
 }
 
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  background: #4caf50;
+  background: black;
   cursor: pointer;
 }
 
