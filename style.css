@@ -25,19 +25,18 @@ body > div {
 }
 
 .generate {
-  position: absolute;
+  position: flex;
   outline: none;
   border: none;
   left: 50%;
   bottom: 5%;
   z-index: 10;
-  transform: translate(-50%, 0);
+
   padding: 20px 30px;
   border-radius: 50px;
-  background-color: grey;
+  background-color: pink;
   color: #000;
-  font-size: 20px;
-  width: 400px;
+  font-size: 15px;
   overflow: hidden;
 }
 
