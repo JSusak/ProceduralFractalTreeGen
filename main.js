@@ -77,7 +77,7 @@ function draw(x, y, length, angle, width, leafLength) {
 }
 //Col 1 is branch colour, col 2 is leaf colour.
 button.addEventListener("click", generateNewTree);
-draw(canvas.width / 2, canvas.height - 80, 220, 0, 10);
+draw(canvas.width / 2, canvas.height - 80, 300, 10, 10);
 
 function generateNewTree() {
   //Clears current tree from view.
