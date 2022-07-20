@@ -1,5 +1,4 @@
 const canvas = document.querySelector("canvas");
-const button = document.querySelector(".generateNormal");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const ctx = canvas.getContext("2d");
@@ -76,7 +75,6 @@ function draw(x, y, length, angle, width, leafLength) {
   ctx.restore();
 }
 //Col 1 is branch colour, col 2 is leaf colour.
-button.addEventListener("click", generateNewTree);
 draw(canvas.width / 2, canvas.height - 80, 300, 10, 10);
 
 function generateNewTree() {
