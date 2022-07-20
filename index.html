@@ -19,16 +19,35 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
       rel="stylesheet"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
     <canvas> </canvas>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-brand center">
+        <!-- navbar items, navbar burger... -->
+        Procedural Fractal Tree Generator (Josh Susak)
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <div class="row">
       <div class="col menu">
         <!-- TODO: Add more menu options and even a separate menu - bezier/quadratic curve, shadow toggle, shadow colour, buttons for generating tree based on settings/random tree... -->
@@ -37,22 +56,24 @@
         <p class="setting"><span class="caption">Tree Width</span></p>
         <div class="slidercontainer"><input id="tWidth" class="slider mdl-slider mdl-js-slider" type="range" min="1" max="40" step = "1"value="5"></input></div>
         <p class="setting"><span class="caption">Tree Length</span></p>
-        <div class="slidercontainer"><input id="tLength" class="slider mdl-slider mdl-js-slider" type="range" min="50" max="800" step = "10"value="180"></input></div>
+        <div class="slidercontainer"><input id="tLength" class="slider mdl-slider mdl-js-slider" type="range" min="50" max="800" step = "10"value="190"></input></div>
         <p class="setting"><span class="caption">Tree Angle</span></p>
         <div class="slidercontainer"><input id="tAngle" class="slider mdl-slider mdl-js-slider" type="range" min="-40" max="40" value="0" step="5"></input></div>
         <p class="setting"><span class="caption">Branch Angle</span></p>
         <div class="slidercontainer"><input id="bAngle" class="slider mdl-slider mdl-js-slider" type="range" min="30" max="100" value="30" step="10"></input></div>
         <p class="setting"><span class="caption">Leaf Size</span></p>
-        <div class="slidercontainer"><input id="lSize" class="slider mdl-slider mdl-js-slider" type="range" min="0" max="15" value="5" step="1"></input></div>
+        <div class="slidercontainer "><input id="lSize" class="slider mdl-slider mdl-js-slider" type="range" min="0" max="15" value="5" step="1"></input></div>
         <label for="checkid"  style="word-wrap:break-word">
           <input id="checkid"  type="checkbox" value="test" /> Bezier Curve?
        </label>
         <p class="setting"><span class="caption">Branch Colour</span></p>
-        <div class="slidercontainer"><input id="bCol" class="slider mdl-slider mdl-js-slider colourSelect" type="color"value="#85521c"></input></div>
+        <div class="slidercontainer"><input id="bCol" class="slider mdl-slider mdl-js-slider colourSelect" type="color"value="#FEEEEC"></input></div>
         <p class="setting"><span class="caption">Leaf Colour</span></p>
-        <div class="slidercontainer"><input id="lCol" class="slider mdl-slider mdl-js-slider" type="color"value="#85521c"></input></div>
-        <button class="generate generateNormal">Generate Tree</button>
+        <div class="slidercontainer"><input id="lCol" class="slider mdl-slider mdl-js-slider" type="color"value="#FFB6C1"></input></div>
+        <button class="button is-white generate generateNormal">White</button>
+        <button class="generate generateNormal">Generate</button>
       </div>
+      
     </div>
 
     <script src="main.js"></script>
