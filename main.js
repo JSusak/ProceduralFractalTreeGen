@@ -2,6 +2,7 @@ const canvas = document.querySelector("canvas");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const ctx = canvas.getContext("2d");
+const randButton = document.getElementById("random");
 
 //
 let opacityValue = document.getElementById("opacity");
@@ -80,6 +81,38 @@ function generateNewTree() {
     leafSize.value
   );
 }
+
+/**
+ * Creates a random integer between 1 and max value
+ * @param {} maxValue The highest number generated.
+ * @returns A random number between the boundaries of 1 and the max value.
+ */
+function generateRandomInt(maxValue) {
+  return Math.floor(Math.random() * maxValue) + 1;
+}
+
+function generateRandomTree() {
+  let newTreeWidth = generateRandomInt(40);
+  let newTreeLength = generateRandomInt(800);
+  let newTreeAngle = generateRandomInt(40);
+  let newBranchAngle = generateRandomInt(100);
+  let newLeafSize = generateRandomInt(15);
+  let newBranchColour = Math.floor(Math.random() * 16777215).toString(16);
+  let newLeafColour = Math.floor(Math.random() * 16777215).toString(16);
+
+  let bezierProb = generateRandomInt(2);
+  bezierProb == 1 ? (bezier.checked = true) : (bezier.checked = false);
+
+  treeLength.value = newTreeLength;
+  treeAngle.value = newTreeAngle;
+  treeWidth.value = newTreeWidth;
+  branchColour.value = "#" + newBranchColour;
+  leafColour.value = "#" + newLeafColour;
+  leafSize.value = newLeafSize;
+  branchAngle.value = newBranchAngle;
+
+  generateNewTree();
+}
 /**
  * Removes all visible content from the canvas, sets up initialisation of new tree.
  */
@@ -89,3 +122,5 @@ function clearCanvas() {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.stroke();
 }
+
+randButton.addEventListener("click", generateRandomTree);
