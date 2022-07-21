@@ -90,6 +90,7 @@ body > div {
   transition: opacity 0.2s;
   display: inline-block;
   margin-bottom: 10px;
+  --sliderTick-background: #373733;
 }
 
 .padding {
@@ -102,11 +103,13 @@ body > div {
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
+  border: 2px solid white;
   appearance: none;
   width: 25px;
   height: 25px;
-  background: #373737;
+  background: var(--sliderTick-background);
 }
+
 [type="checkbox"] {
   vertical-align: middle;
 }

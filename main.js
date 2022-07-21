@@ -4,6 +4,7 @@ canvas.height = window.innerHeight;
 const ctx = canvas.getContext("2d");
 const randButton = document.getElementById("random");
 const dlButton = document.getElementById("download");
+const sliders = document.querySelectorAll(".slider");
 
 //
 let opacityValue = document.getElementById("opacity");
@@ -72,6 +73,7 @@ generateRandomTree();
 
 function generateNewTree() {
   //Clears current tree from view.
+  modifySliderColours(branchColour.value);
   clearCanvas();
   draw(
     canvas.width / 2,
@@ -119,6 +121,13 @@ function generateRandomTree() {
   shadowIntensity.value = newShadowIntensity;
 
   generateNewTree();
+}
+
+function modifySliderColours(colourString) {
+  sliders.forEach((slider) => {
+    slider.style.backgroundColor = colourString;
+    slider.style.setProperty("--sliderTick-background", shadowColour.value);
+  });
 }
 /**
  * Removes all visible content from the canvas, sets up initialisation of new tree.
