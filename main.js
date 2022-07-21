@@ -12,6 +12,7 @@ let branchAngle = document.getElementById("bAngle").value;
 let leafSize = document.getElementById("lSize").value;
 let branchColour = document.getElementById("bCol").value;
 let leafColour = document.getElementById("lCol").value;
+let bezier = document.getElementById("checkbezier");
 
 function updateSliderValues() {
   opacityValue = document.getElementById("opacity").value;
@@ -34,7 +35,7 @@ function updateSliderValues() {
  * @param {*} col2
  * @returns
  */
-function draw(x, y, length, angle, width, leafLength) {
+function draw(x, y, length, angle, width) {
   //Retrieve slider values (which may have changed from last drawing)
   ctx.beginPath();
   ctx.save();
@@ -47,14 +48,14 @@ function draw(x, y, length, angle, width, leafLength) {
   ctx.translate(x, y);
   ctx.rotate((angle * Math.PI) / 180);
   ctx.moveTo(0, 0);
-  //ctx.lineTo(0, -length);
-  if (angle > 0) {
-    ctx.bezierCurveTo(30, -length / 2, 30, -length / 2, 0, -length);
-    //ctx.quadraticCurveTo(10, -length / 2, 0, -length);
-  } else {
-    ctx.bezierCurveTo(30, -length / 2, -30, -length / 2, 0, -length);
-    //ctx.quadraticCurveTo(-10, -length / 2, 0, -length);
-  }
+
+  angle > 0
+    ? bezier.checked
+      ? ctx.bezierCurveTo(30, -length / 2, 30, -length / 2, 0, -length)
+      : ctx.quadraticCurveTo(10, -length / 2, 0, -length)
+    : bezier.checked
+    ? ctx.bezierCurveTo(30, -length / 2, -30, -length / 2, 0, -length)
+    : ctx.quadraticCurveTo(-10, -length / 2, 0, -length);
   ctx.stroke();
 
   if (length < 10) {
@@ -74,7 +75,6 @@ function draw(x, y, length, angle, width, leafLength) {
   draw(0, -length, length * 0.75, angle - branchAngle, width * 0.6);
   ctx.restore();
 }
-//Col 1 is branch colour, col 2 is leaf colour.
 draw(canvas.width / 2, canvas.height - 80, 300, 10, 10);
 
 function generateNewTree() {
