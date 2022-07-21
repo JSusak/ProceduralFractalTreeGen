@@ -65,7 +65,7 @@ function draw(x, y, length, angle, width) {
   draw(0, -length, length * 0.75, angle - branchAngle.value, width * 0.6);
   ctx.restore();
 }
-draw(canvas.width / 2, canvas.height - 80, 300, 10, 10);
+generateRandomTree();
 
 function generateNewTree() {
   //Clears current tree from view.
