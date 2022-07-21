@@ -15,6 +15,7 @@ let leafSize = document.getElementById("lSize");
 let branchColour = document.getElementById("bCol");
 let leafColour = document.getElementById("lCol");
 let bezier = document.getElementById("checkbezier");
+let shadowColour = document.getElementById("shCol");
 /**
  * Draw a procedurally generated tree, based on given parameters.
  * @param {*} x The starting x position of the tree.
@@ -33,7 +34,7 @@ function draw(x, y, length, angle, width) {
   ctx.globalAlpha = opacityValue.value;
   ctx.strokeStyle = branchColour.value;
   ctx.shadowBlur = 15;
-  ctx.shadowColor = leafColour.value;
+  ctx.shadowColor = shadowColour.value;
   ctx.fillStyle = leafColour.value;
   ctx.lineWidth = width;
   ctx.translate(x, y);
@@ -111,6 +112,8 @@ function generateRandomTree() {
   leafColour.value = "#" + newLeafColour;
   leafSize.value = newLeafSize;
   branchAngle.value = newBranchAngle;
+  //When a tree is randomly generated the shadow colour should be the same as the leaf colour (looks nicer)
+  shadowColour.value = "#" + newLeafColour;
 
   generateNewTree();
 }
