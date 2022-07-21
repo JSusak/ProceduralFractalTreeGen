@@ -3,6 +3,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const ctx = canvas.getContext("2d");
 const randButton = document.getElementById("random");
+const dlButton = document.getElementById("download");
 
 //
 let opacityValue = document.getElementById("opacity");
@@ -123,4 +124,12 @@ function clearCanvas() {
   ctx.stroke();
 }
 
+function download() {
+  var image = canvas
+    .toDataURL("image/png")
+    .replace("image/png", "image/octet-stream");
+  dlButton.setAttribute("href", image);
+}
+
+dlButton.addEventListener("click", download);
 randButton.addEventListener("click", generateRandomTree);
