@@ -6,6 +6,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"/>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
@@ -43,13 +44,13 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button is-light" id="random">
+              <a class="btn" id="random">
                 Random Tree
               </a>
-              <a class="button is-light" id="download" download="image.png">
+              <a class="btn" id="download" download="image.png">
                 Download Image
               </a>
-              <a class="button is-light" href="https://github.com/JSusak">
+              <a class="btn" href="https://github.com/JSusak">
                 <span class="icon">
                   <i class="fab fa-github"></i>
                 </span>
@@ -77,9 +78,13 @@
         <div class="slidercontainer "><input id="lSize" class="slider mdl-slider mdl-js-slider" type="range" min="0" max="15" value="5" step="1" onchange="generateNewTree()"></input></div>
         <p class="setting"><span class="caption">Shadow Intensity</span></p>
         <div class="slidercontainer "><input id="sIntensity" class="slider mdl-slider mdl-js-slider" type="range" min="0" max="30" value="10" step="1" onchange="generateNewTree()"></input></div>
-        <label for="checkbezier"  style="word-wrap:break-word">
-          <input id="checkbezier"  type="checkbox" value="test" onchange="generateNewTree()"/> Bezier Curve?
-       </label>
+        <div class="pretty p-icon p-round p-tada">
+          <input id="checkbezier"  type="checkbox" value="test" onchange="generateNewTree()"/>
+          <div class="state">
+            <i class="icon fa fa-check"></i>
+            <label>Bezier Curve?</label>
+          </div>
+        </div>
         <p class="setting"><span class="caption">Branch Colour</span></p>
         <div class="slidercontainer"><input id="bCol" class="slider mdl-slider mdl-js-slider colourSelect" type="color"value="#FEEEEC" onchange="generateNewTree()"></input></div>
         <p class="setting"><span class="caption">Leaf Colour</span></p>

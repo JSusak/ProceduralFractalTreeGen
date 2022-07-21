@@ -153,3 +153,15 @@ input[type="color"]::-webkit-color-swatch {
 .navbar:hover {
   opacity: 0.8;
 }
+
+.btn {
+  color: white;
+  background-color: #777;
+  border: 2px solid #e8e8e8;
+  margin: 0 5px;
+}
+.btn:hover {
+  color: #000;
+  border: 2px solid #e8e8e8;
+  background-color: #e8e8e8;
+}

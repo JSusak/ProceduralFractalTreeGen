@@ -18,6 +18,7 @@ let leafColour = document.getElementById("lCol");
 let bezier = document.getElementById("checkbezier");
 let shadowColour = document.getElementById("shCol");
 let shadowIntensity = document.getElementById("sIntensity");
+
 /**
  * Draw a procedurally generated tree, based on given parameters.
  * @param {*} x The starting x position of the tree.
