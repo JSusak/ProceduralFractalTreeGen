@@ -143,3 +143,6 @@ input[type="color"]::-webkit-color-swatch {
   margin: auto;
   padding-left: 10px;
 }
+.navbar:hover {
+  opacity: 0.8;
+}
