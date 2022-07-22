@@ -1,6 +1,8 @@
 const canvas = document.querySelector("canvas");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+canvas.top = canvas.offsetTop;
+canvas.left = canvas.offsetLeft;
 const ctx = canvas.getContext("2d");
 const randButton = document.getElementById("random");
 const dlButton = document.getElementById("download");
