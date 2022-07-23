@@ -48,7 +48,6 @@ body > div {
   padding: 10px;
   margin-left: 40px;
   width: 10px;
-  display: flex;
   opacity: 0.5;
   transition: all 0.4s ease-in-out;
   color: white;
@@ -72,7 +71,6 @@ body > div {
   padding-bottom: 70px;
 }
 .col {
-  display: flex;
   flex-direction: column;
   padding: 0.3em;
 }
@@ -80,6 +78,7 @@ body > div {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 15px;
 }
 .slider {
   -webkit-appearance: none;
@@ -164,4 +163,14 @@ input[type="color"]::-webkit-color-swatch {
   color: #000;
   border: 2px solid #e8e8e8;
   background-color: #e8e8e8;
+}
+
+.draggable {
+  width: 25%;
+  min-height: 6.5em;
+  margin: 1rem 0 0 1rem;
+  border-radius: 0.75em;
+  padding: 4%;
+  touch-action: none;
+  user-select: none;
 }
