@@ -174,3 +174,22 @@ input[type="color"]::-webkit-color-swatch {
   touch-action: none;
   user-select: none;
 }
+
+/**
+            Wavy text **/
+.wavy-text span {
+  display: inline-block;
+  animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(3px);
+  }
+}
