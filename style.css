@@ -61,7 +61,8 @@ body > div {
   justify-content: center;
   display: inline;
 }
-.row {
+.row,
+.rowButtons {
   display: flex;
   flex-direction: row;
   align-items: center;
