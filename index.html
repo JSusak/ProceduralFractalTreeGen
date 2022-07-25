@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap"
       rel="stylesheet"
     />
+
     <!-- MDB -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
@@ -44,15 +45,19 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="btn" id="random">
-                Random Tree
-              </a>
-              <a class="btn" id="download" download="image.png">
-                Download Image
-              </a>
               <a class="btn" href="https://github.com/JSusak">
                 <span class="icon">
-                  <i class="fab fa-github"></i>
+                  <i class="fab fa-github fa-2xl"></i>
+                </span>
+              </a>
+              <a class="btn" href="https://www.instagram.com/j.o.sh/">
+                <span class="icon">
+                  <i class="fa-brands fa-instagram fa-2xl"></i>
+                </span>
+              </a>
+              <a class="btn" href="https://stackoverflow.com/users/19225394/jsusak">
+                <span class="icon">
+                  <i class="fa-brands fa-stack-overflow fa-2xl"></i>
                 </span>
               </a>
             </div>
@@ -60,6 +65,27 @@
         </div>
       </div>
     </nav>
+
+    <div class="rowButtons">
+      <div class="col menuButtons draggable">
+        <div><b style="font-size: 18px;">Extras</b></div>
+        <div class="buttons">
+          <a class="btn btnMenu" id="random">
+            Random Tree
+          </a>
+          <a class="btn btnMenu" id="download" download="image.png">
+            Download Image
+          </a>
+          <button class="js-modal-trigger btn btnMenu" data-target="modalHTU">
+           How To Use
+          </button>
+
+          
+        </div>
+        <div class="settingsFooter"><b>Click anywhere inside the menu to drag.</b></div>
+      </div>
+      
+    </div>
 
     <div class="row">
       <div class="col menu draggable">
@@ -93,15 +119,38 @@
         <div class="slidercontainer"><input id="lCol" class="slider mdl-slider mdl-js-slider" type="color"value="#FFB6C1" onchange="generateNewTree()"></input></div>
         <p class="setting"><span class="caption">Shadow Colour</span></p>
         <div class="slidercontainer"><input id="shCol" class="slider mdl-slider mdl-js-slider" type="color"value="#FFB6C1" onchange="generateNewTree()"></input></div>
-        <div id="mainSettingsheader"><b style="font-size: 10px;">Click anywhere inside the menu to drag.</b></div>
+        <div class="settingsFooter"><b><span>Click anywhere inside the menu to drag.</span></b></div>
       </div>
       
     </div>
 
+
+    <div id="modalHTU" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Modal title</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <!-- Content ... -->
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success">Save changes</button>
+          <button class="button">Cancel</button>
+        </footer>
+      </div>
+      </div>
+    
+      
+    </div>
+
+
+
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
-    
     <script src="interactions.js"></script>
+    <script src="modal.js"></script>
     <script src="text.js"></script>
   </body>
 </html>

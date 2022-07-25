@@ -8,7 +8,6 @@ const randButton = document.getElementById("random");
 const dlButton = document.getElementById("download");
 const sliders = document.querySelectorAll(".slider");
 
-//
 let opacityValue = document.getElementById("opacity");
 let treeWidth = document.getElementById("tWidth");
 let treeLength = document.getElementById("tLength");

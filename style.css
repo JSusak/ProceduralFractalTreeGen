@@ -42,7 +42,8 @@ body > div {
   overflow: hidden;
 }
 
-.menu {
+.menu,
+.menuButtons {
   border-style: solid;
   background-color: #565656;
   padding: 10px;
@@ -52,7 +53,8 @@ body > div {
   transition: all 0.4s ease-in-out;
   color: white;
 }
-.menu:hover {
+.menu:hover,
+.menuButtons:hover {
   opacity: 0.99;
 }
 .setting {
@@ -61,8 +63,8 @@ body > div {
   justify-content: center;
   display: inline;
 }
-.row,
-.rowButtons {
+
+.row {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -70,6 +72,22 @@ body > div {
   justify-content: center;
   width: 250px;
   padding-bottom: 70px;
+}
+.rowButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.4em;
+  justify-content: center;
+  width: 300px;
+  float: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.settingsFooter {
+  font-size: 12px;
 }
 .col {
   flex-direction: column;
@@ -166,6 +184,15 @@ input[type="color"]::-webkit-color-swatch {
   background-color: #e8e8e8;
 }
 
+.btnMenu {
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+
+.js-modal-trigger {
+  font-family: "Mochiy Pop One", sans-serif;
+}
+
 .draggable {
   width: 25%;
   min-height: 6.5em;
@@ -193,4 +220,17 @@ input[type="color"]::-webkit-color-swatch {
   100% {
     transform: translateY(3px);
   }
+}
+
+b span:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+  visibility: visible;
+
+  text-shadow: -0.05px -0.05px 0 white, 0.05px -0.05px 0 white,
+    -0.05px 0.05px 0 white, 0.05px 0.05px 0 white;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
