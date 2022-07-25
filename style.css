@@ -234,3 +234,6 @@ b span:hover {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
+.modal-card {
+  background-color: #000;
+}
