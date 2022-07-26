@@ -1,4 +1,6 @@
-const canvas = document.querySelector("canvas");
+//Main Canvas Properties
+
+const canvas = document.getElementById("container");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 canvas.top = canvas.offsetTop;
@@ -19,6 +21,12 @@ let leafColour = document.getElementById("lCol");
 let bezier = document.getElementById("checkbezier");
 let shadowColour = document.getElementById("shCol");
 let shadowIntensity = document.getElementById("sIntensity");
+
+//Magnifying canvas properties
+const magnify = document.getElementById("magnify");
+const magCtx = magnify.getContext("2d");
+
+//Zoom
 
 /**
  * Draw a procedurally generated tree, based on given parameters.
@@ -150,3 +158,20 @@ function download() {
 
 dlButton.addEventListener("click", download);
 randButton.addEventListener("click", generateRandomTree);
+
+canvas.addEventListener("click", function (e) {
+  magCtx.fillStyle = "white";
+  //magnify.clearRect(0,0, zoom.width, zoom.height);
+  //magnify.fillStyle = "transparent";
+  magCtx.fillRect(0, 0, magnify.width, magnify.height);
+
+  magCtx.drawImage(canvas, e.x, e.y, 200, 100, 0, 0, 400, 200);
+  magCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  magnify.style.top = e.pageY + 10 + "px";
+  magnify.style.left = e.pageX + 10 + "px";
+  magnify.style.display = "block";
+});
+
+canvas.addEventListener("mouseout", function () {
+  magnify.style.display = "none";
+});
