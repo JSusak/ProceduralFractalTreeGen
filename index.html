@@ -84,6 +84,13 @@
           <button class="js-modal-trigger btn btnMenu" data-target="modalHTU">
            How To Use
           </button>
+          <div class="pretty p-icon p-round p-tada cb">
+            <input id="disZoom"  type="checkbox" value="test"/>
+            <div class="state">
+              <i class="icon fa fa-check"></i>
+              <label>Disable zoom on click</label>
+            </div>
+          </div>
 
           
         </div>
@@ -111,10 +118,10 @@
         <div class="slidercontainer "><input id="lSize" class="slider mdl-slider mdl-js-slider" type="range" min="0" max="15" value="5" step="1" onchange="generateNewTree()"></input></div>
         <p class="setting"><span class="caption">Shadow Intensity</span></p>
         <div class="slidercontainer "><input id="sIntensity" class="slider mdl-slider mdl-js-slider" type="range" min="0" max="30" value="10" step="1" onchange="generateNewTree()"></input></div>
-        <div class="pretty p-icon p-round p-tada">
+        <div class="pretty p-icon p-round p-tada cb">
           <input id="checkbezier"  type="checkbox" value="test" onchange="generateNewTree()"/>
           <div class="state">
-            <i class="icon fa fa-check"></i>
+            <i class="icon fa fa-check "></i>
             <label>Bezier Curve?</label>
           </div>
         </div>

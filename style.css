@@ -248,3 +248,8 @@ b span:hover {
   image-rendering: crisp-edges;
   -ms-interpolation-mode: nearest-neighbor;
 }
+
+.cb {
+  margin-bottom: 3px;
+  margin-top: 3px;
+}

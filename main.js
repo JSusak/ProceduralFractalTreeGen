@@ -160,16 +160,22 @@ dlButton.addEventListener("click", download);
 randButton.addEventListener("click", generateRandomTree);
 
 canvas.addEventListener("click", function (e) {
-  magCtx.fillStyle = "white";
-  //magnify.clearRect(0,0, zoom.width, zoom.height);
-  //magnify.fillStyle = "transparent";
-  magCtx.fillRect(0, 0, magnify.width, magnify.height);
+  if (!document.getElementById("disZoom").checked) {
+    //While not checked, provide the ability to zoom in.
+    magCtx.fillStyle = "white";
+    //magnify.clearRect(0,0, zoom.width, zoom.height);
+    //magnify.fillStyle = "transparent";
+    magCtx.fillRect(0, 0, magnify.width, magnify.height);
 
-  magCtx.drawImage(canvas, e.x, e.y, 200, 100, 0, 0, 400, 200);
-  magCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
-  magnify.style.top = e.pageY + 10 + "px";
-  magnify.style.left = e.pageX + 10 + "px";
-  magnify.style.display = "block";
+    magCtx.drawImage(canvas, e.x, e.y, 200, 100, 0, 0, 400, 200);
+    magCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    magnify.style.top = e.pageY + 10 + "px";
+    magnify.style.left = e.pageX + 10 + "px";
+    magnify.style.display = "block";
+  } else {
+    //Do nothing on click.
+    return;
+  }
 });
 
 canvas.addEventListener("mouseout", function () {
