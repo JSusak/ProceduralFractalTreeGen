@@ -26,8 +26,6 @@ let shadowIntensity = document.getElementById("sIntensity");
 const magnify = document.getElementById("magnify");
 const magCtx = magnify.getContext("2d");
 
-//Zoom
-
 /**
  * Draw a procedurally generated tree, based on given parameters.
  * @param {*} x The starting x position of the tree.
@@ -68,7 +66,6 @@ function draw(x, y, length, angle, width) {
     ctx.arc(0, -length, leafSize.value, 50, Math.PI / 2);
     ctx.fill();
     ctx.restore();
-
     return;
   }
   curve = branchAngle.value * 10 + 10;
@@ -95,6 +92,7 @@ function generateNewTree() {
     leafColour.value,
     leafSize.value
   );
+  updateSliderValues();
 }
 
 /**
@@ -155,7 +153,7 @@ function download() {
     .replace("image/png", "image/octet-stream");
   dlButton.setAttribute("href", image);
 }
-
+//
 dlButton.addEventListener("click", download);
 randButton.addEventListener("click", generateRandomTree);
 
@@ -181,3 +179,47 @@ canvas.addEventListener("click", function (e) {
 canvas.addEventListener("mouseout", function () {
   magnify.style.display = "none";
 });
+
+//Updates and displays numeric range values
+function updateSlider(sliderID) {
+  var slider = document.getElementById(sliderID);
+  var output = document.getElementById(sliderID + "Val");
+  output.innerHTML = slider.value;
+}
+
+//This function should only be called once rather than every update.
+//Provides the onchange and oninput changing capability.
+function giveBaseCapability(sliderID) {
+  var slider = document.getElementById(sliderID);
+  var output = document.getElementById(sliderID + "Val");
+
+  slider.oninput = function () {
+    output.innerHTML = this.value;
+  };
+}
+
+function updateSliderValues() {
+  updateSlider("opacity");
+  updateSlider("tWidth");
+  updateSlider("tLength");
+  updateSlider("tAngle");
+  updateSlider("bAngle");
+  updateSlider("lSize");
+  updateSlider("sIntensity");
+  updateSlider("bCol");
+  updateSlider("lCol");
+  updateSlider("shCol");
+}
+
+giveBaseCapability("opacity");
+giveBaseCapability("tWidth");
+giveBaseCapability("tLength");
+giveBaseCapability("tAngle");
+giveBaseCapability("bAngle");
+giveBaseCapability("lSize");
+giveBaseCapability("sIntensity");
+//The value of a colour input IS its hex code.
+//No need to write extra code to convert singular RGB values to hex.
+giveBaseCapability("bCol");
+giveBaseCapability("lCol");
+giveBaseCapability("shCol");

@@ -104,19 +104,19 @@
     
         <div><b style="font-size: 18px;">Manipulation Menu</b></div>
         <!-- TODO: Add more menu options and even a separate menu - bezier/quadratic curve, shadow toggle, shadow colour, buttons for generating tree based on settings/random tree... -->
-        <p class="setting"><span class="caption">Opacity</span></p>
-        <div no-pointer-event class="slidercontainer"><input id="opacity" class="slider mdl-slider mdl-js-slider" type="range" min="0.1" max="1" step = "0.1"value="0.7" onchange="generateNewTree()"></input></div>
-        <p class="setting"><span class="caption">Tree Width</span></p>
+        <p class="setting"><span class="caption">Opacity - <b><span id="opacityVal"></span></b></p>
+        <div no-pointer-event class="slidercontainer"><input id="opacity" class="slider mdl-slider mdl-js-slider" type="range" min="0.1" max="1" step = "0.1"value="0.7" onchange="generateNewTree();"></input></div>
+        <p class="setting"><span class="caption">Tree Width - <b><span id="tWidthVal"></span></b></p>
         <div class="slidercontainer"><input id="tWidth" class="slider mdl-slider mdl-js-slider" type="range" min="1" max="40" step = "1"value="10" onchange="generateNewTree()"></input></div>
-        <p class="setting"><span class="caption">Tree Length</span></p>
+        <p class="setting"><span class="caption">Tree Length - <b><span id="tLengthVal"></span></b></span></p>
         <div class="slidercontainer"><input id="tLength" class="slider mdl-slider mdl-js-slider" type="range" min="50" max="800" step = "10"value="300" onchange="generateNewTree()"></input></div>
-        <p class="setting"><span class="caption">Tree Angle</span></p>
+        <p class="setting"><span class="caption">Tree Angle - <b><span id="tAngleVal"></span></b></span></p>
         <div class="slidercontainer"><input id="tAngle" class="slider mdl-slider mdl-js-slider" type="range" min="-40" max="40" value="10" step="5" onchange="generateNewTree()"></input></div>
-        <p class="setting"><span class="caption">Branch Angle</span></p>
+        <p class="setting"><span class="caption">Branch Angle - <b><span id="bAngleVal"></span></b></span></p>
         <div class="slidercontainer"><input id="bAngle" class="slider mdl-slider mdl-js-slider" type="range" min="30" max="100" value="30" step="10" onchange="generateNewTree()"></input></div>
-        <p class="setting"><span class="caption">Leaf Size</span></p>
+        <p class="setting"><span class="caption">Leaf Size - <b><span id="lSizeVal"></span></b></span></p>
         <div class="slidercontainer "><input id="lSize" class="slider mdl-slider mdl-js-slider" type="range" min="0" max="15" value="5" step="1" onchange="generateNewTree()"></input></div>
-        <p class="setting"><span class="caption">Shadow Intensity</span></p>
+        <p class="setting"><span class="caption">Shadow Intensity - <b><span id="sIntensityVal"></span></b></span></p>
         <div class="slidercontainer "><input id="sIntensity" class="slider mdl-slider mdl-js-slider" type="range" min="0" max="30" value="10" step="1" onchange="generateNewTree()"></input></div>
         <div class="pretty p-icon p-round p-tada cb">
           <input id="checkbezier"  type="checkbox" value="test" onchange="generateNewTree()"/>
@@ -125,11 +125,11 @@
             <label>Bezier Curve?</label>
           </div>
         </div>
-        <p class="setting"><span class="caption">Branch Colour</span></p>
+        <p class="setting"><span class="caption">Branch Col. (<span id="bColVal"></span>)</p>
         <div class="slidercontainer"><input id="bCol" class="slider mdl-slider mdl-js-slider colourSelect" type="color"value="#FEEEEC" onchange="generateNewTree()"></input></div>
-        <p class="setting"><span class="caption">Leaf Colour</span></p>
+        <p class="setting"><span class="caption">Leaf Col. (<span id="lColVal"></span>)</span></p>
         <div class="slidercontainer"><input id="lCol" class="slider mdl-slider mdl-js-slider" type="color"value="#FFB6C1" onchange="generateNewTree()"></input></div>
-        <p class="setting"><span class="caption">Shadow Colour</span></p>
+        <p class="setting"><span class="caption">Shadow Col. (<span id="shColVal"></span>)</span></p>
         <div class="slidercontainer"><input id="shCol" class="slider mdl-slider mdl-js-slider" type="color"value="#FFB6C1" onchange="generateNewTree()"></input></div>
         <div class="settingsFooter"><b><span>Click anywhere inside the menu to drag.</span></b></div>
       </div>
@@ -170,5 +170,6 @@
     <script src="interactions.js"></script>
     <script src="modal.js"></script>
     <script src="text.js"></script>
+    <script src="componentValues.js" type="module"></script>
   </body>
 </html>
