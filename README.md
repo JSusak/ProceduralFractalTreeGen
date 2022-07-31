@@ -1,7 +1,5 @@
 # ProceduralFractalTreeGen
 
-## Intro
-
 A short side project, demonstrating the beautiness of procedurally generated images alongside the connection to 'randomness' in our everyday lives.
 
 Demonstration can be found at https://jsusak.github.io/ProceduralFractalTreeGen/
@@ -31,7 +29,7 @@ Currently, you are able to produce trees by changing the values for:
 - **Bezier Curve**: Indicates whether the branches should be drawn by means of a bezier curve or a quadratic curve. While these both connect two distinct points, the bezier curve is different in that its path to get to the point is different, resulting in a noticeably **smoother** curve.
 - **Branch/Leaf/Shadow Colour**: Change the colour of the branches/leaves/shadows. By default, the leaf and shadow colours are the same but you are able to change them if you want :)
 
-I found that changing the tree length decreases the generation time for all other properties
+During my coding, I found changing the tree length impacts the generation time in the most adverse way.
 
 TODO:
 
