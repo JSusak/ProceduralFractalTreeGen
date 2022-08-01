@@ -29,6 +29,7 @@
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
+    
     <canvas id="container"> </canvas>
     <canvas id="magnify"width="400" height="200" style="position:absolute; top:0; left:0; display:none"></canvas>
 
@@ -55,14 +56,15 @@
                   <i class="fab fa-github fa-2xl"></i>
                 </span>
               </a>
-              <a class="btn" href="https://www.instagram.com/j.o.sh/">
-                <span class="icon">
-                  <i class="fa-brands fa-instagram fa-2xl"></i>
-                </span>
-              </a>
+            
               <a class="btn" href="https://stackoverflow.com/users/19225394/jsusak">
                 <span class="icon">
                   <i class="fa-brands fa-stack-overflow fa-2xl"></i>
+                </span>
+              </a>
+              <a class="btn" href="https://www.instagram.com/j.o.sh/">
+                <span class="icon">
+                  <i class="fa-brands fa-instagram fa-2xl"></i>
                 </span>
               </a>
             </div>
@@ -102,7 +104,7 @@
     <div class="row">
       <div class="col menu draggable">
     
-        <div><b style="font-size: 18px;">Manipulation Menu</b></div>
+        <div><b style="font-size: 18px;">Tree Properties</b></div>
         <!-- TODO: Add more menu options and even a separate menu - bezier/quadratic curve, shadow toggle, shadow colour, buttons for generating tree based on settings/random tree... -->
         <p class="setting"><span class="caption">Opacity - <b><span id="opacityVal"></span></b></p>
         <div no-pointer-event class="slidercontainer"><input id="opacity" class="slider mdl-slider mdl-js-slider" type="range" min="0.1" max="1" step = "0.1"value="0.7" onchange="generateNewTree();"></input></div>
@@ -146,7 +148,7 @@
         </header>
         <section class="modal-card-body has-background-dark has-text-primary-light">
           Welcome to the Procedural Fractal Tree Generator.<br><br>
-          • Use the various components found inside the <b>Manipulation Menu</b> to change the styling of the tree.
+          • Use the various components found inside the <b>Tree Properties</b> menu to change the styling of the tree.
           Once these components are altered, a new tree will be procedurally generated.<br><br>
           • Keep in mind that as your tree gets more complex, generation times can decrease rapidly. The main factor affecting this is the <b>tree length</b>.<br><br>
           • Use the <b>Extras</b> menu to play around with some additional features, including the generation of a completely random tree and downloading an image of a tree you like onto your PC.<br><br>
@@ -166,6 +168,7 @@
 
 
     <script src="main.js"></script>
+    <script src="rain.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
     <script src="interactions.js"></script>
     <script src="modal.js"></script>

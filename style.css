@@ -253,18 +253,3 @@ b span:hover:not([id$="Val"]) {
   margin-bottom: 3px;
   margin-top: 3px;
 }
-
-.rainDrop {
-  background: blue;
-  width: 1px;
-  height: 90px;
-  position: absolute;
-  bottom: 200px;
-  animation: rainfall 0.63s linear infinite;
-}
-
-@keyframes rainfall {
-  to {
-    margin-top: 1000px;
-  }
-}
