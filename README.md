@@ -4,9 +4,10 @@ A short side project, demonstrating the beautiness of procedurally generated ima
 
 Demonstration can be found at https://jsusak.github.io/ProceduralFractalTreeGen/
 
-When I first started programming, I would tend to draw crazy shapes using the python _turtle_ module. While not random and somewhat basic, it was an initial insight into the complexity of computer generated images.  
+When I first started programming, I would tend to draw crazy shapes using the python _turtle_ module. While not random and somewhat basic, it was an initial insight into the complexity of computer generated images, especially when random values are included.  
 This program takes it further, rendering images of _fractal trees_ on a vanilla HTML5 canvas, ones which recursively branch off into smaller structures, based off the chosen slider values.
-Notable features include:
+
+## Notable features
 
 - Ability to generate tree based off slider values or sheer randomness
 - Image downloads
@@ -31,7 +32,7 @@ Currently, you are able to produce trees by changing the values for:
 
 During my coding, I found changing the tree length impacts the generation time in the most adverse way.
 
-TODO:
+## TODO:
 
 - Write README.
 - Add some sort of animation to the canvas?
