@@ -26,6 +26,12 @@ let shadowIntensity = document.getElementById("sIntensity");
 const magnify = document.getElementById("magnify");
 const magCtx = magnify.getContext("2d");
 
+//Undo Capabilities
+const undoButton = document.getElementById("undo");
+let memStep = -1;
+var memArray = new Array();
+var valsArray = new Array([], [], [], [], [], [], [], [], [], [], []);
+
 /**
  * Draw a procedurally generated tree, based on given parameters.
  * @param {*} x The starting x position of the tree.
@@ -78,6 +84,53 @@ function draw(x, y, length, angle, width) {
 }
 generateRandomTree();
 
+function push() {
+  memStep++;
+  if (memStep < memArray.length) {
+    memArray.length = memStep;
+  }
+  memArray.push(document.getElementById("container").toDataURL());
+  //Stores the values for that specific tree in array indexes to easily refer to.
+  valsArray[0][memStep] = opacityValue.value;
+  valsArray[1][memStep] = treeWidth.value;
+  valsArray[2][memStep] = treeLength.value;
+  valsArray[3][memStep] = treeAngle.value;
+  valsArray[4][memStep] = branchAngle.value;
+  valsArray[5][memStep] = leafSize.value;
+  valsArray[6][memStep] = branchColour.value;
+  valsArray[7][memStep] = leafColour.value;
+  valsArray[8][memStep] = bezier.checked;
+  valsArray[9][memStep] = shadowColour.value;
+  valsArray[10][memStep] = shadowIntensity.value;
+}
+
+function undo() {
+  if (memStep > 0) {
+    memStep--;
+    var savedImage = new Image();
+    savedImage.src = memArray[memStep];
+    savedImage.onload = function () {
+      clearCanvas();
+      ctx.drawImage(savedImage, 0, 0);
+    };
+    updateArrValues();
+    updateSliderValues();
+  }
+}
+function updateArrValues() {
+  opacityValue.value = valsArray[0][memStep];
+  treeWidth.value = valsArray[1][memStep];
+  treeLength.value = valsArray[2][memStep];
+  treeAngle.value = valsArray[3][memStep];
+  branchAngle.value = valsArray[4][memStep];
+  leafSize.value = valsArray[5][memStep];
+  branchColour.value = valsArray[6][memStep];
+  leafColour.value = valsArray[7][memStep];
+  bezier.checked = valsArray[8][memStep];
+  shadowColour.value = valsArray[9][memStep];
+  shadowIntensity.value = valsArray[10][memStep];
+}
+
 function generateNewTree() {
   //Clears current tree from view.
   modifySliderColours(branchColour.value);
@@ -93,6 +146,7 @@ function generateNewTree() {
     leafSize.value
   );
   updateSliderValues();
+  push();
 }
 
 /**
@@ -154,8 +208,6 @@ function download() {
   dlButton.setAttribute("href", image);
 }
 //
-dlButton.addEventListener("click", download);
-randButton.addEventListener("click", generateRandomTree);
 
 canvas.addEventListener("click", function (e) {
   if (!document.getElementById("disZoom").checked) {
@@ -223,3 +275,7 @@ giveBaseCapability("sIntensity");
 giveBaseCapability("bCol");
 giveBaseCapability("lCol");
 giveBaseCapability("shCol");
+
+dlButton.addEventListener("click", download);
+randButton.addEventListener("click", generateRandomTree);
+undoButton.addEventListener("click", undo);
