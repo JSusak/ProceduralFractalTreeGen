@@ -10,6 +10,7 @@ This program takes it further, rendering images of _fractal trees_ on a vanilla 
 ## Notable features
 
 - Ability to generate tree based off slider values or sheer randomness
+- Undo/Redo tree states (done, need to push)
 - Image downloads
 - Zoom into the tree at a chosen click point (on by default)
 - Semi-Transparent menus which are easily draggable in order to capture the full beauty of your tree in your browser. (Powered with [interact.js](https://interactjs.io/))
