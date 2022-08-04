@@ -28,6 +28,7 @@ const magCtx = magnify.getContext("2d");
 
 //Undo Capabilities
 const undoButton = document.getElementById("undo");
+const redoButton = document.getElementById("redo");
 let memStep = -1;
 var memArray = new Array();
 var valsArray = new Array([], [], [], [], [], [], [], [], [], [], []);
@@ -117,6 +118,21 @@ function undo() {
     updateSliderValues();
   }
 }
+
+function redo() {
+  if (memStep < memArray.length - 1) {
+    memStep++;
+    var savedImage = new Image();
+    savedImage.src = memArray[memStep];
+    savedImage.onload = function () {
+      clearCanvas();
+      ctx.drawImage(savedImage, 0, 0);
+    };
+    updateArrValues();
+    updateSliderValues();
+  }
+}
+
 function updateArrValues() {
   opacityValue.value = valsArray[0][memStep];
   treeWidth.value = valsArray[1][memStep];
@@ -279,3 +295,4 @@ giveBaseCapability("shCol");
 dlButton.addEventListener("click", download);
 randButton.addEventListener("click", generateRandomTree);
 undoButton.addEventListener("click", undo);
+redoButton.addEventListener("click", redo);
