@@ -22,9 +22,6 @@ let bezier = document.getElementById("checkbezier");
 let shadowColour = document.getElementById("shCol");
 let shadowIntensity = document.getElementById("sIntensity");
 
-//Magnifying canvas properties
-const magnify = document.getElementById("magnify");
-const magCtx = magnify.getContext("2d");
 
 //Undo Capabilities
 const undoButton = document.getElementById("undo");
@@ -46,6 +43,7 @@ var valsArray = new Array([], [], [], [], [], [], [], [], [], [], []);
  */
 function draw(x, y, length, angle, width) {
   //Retrieve slider values (which may have changed from last drawing)
+
   ctx.beginPath();
   ctx.save();
   ctx.globalAlpha = opacityValue.value;
@@ -58,6 +56,7 @@ function draw(x, y, length, angle, width) {
   ctx.rotate((angle * Math.PI) / 180);
   ctx.moveTo(0, 0);
 
+  //Base drawing calculations mainly taken from YT vid.
   angle > 0
     ? bezier.checked
       ? ctx.bezierCurveTo(30, -length / 2, 30, -length / 2, 0, -length)
@@ -225,28 +224,6 @@ function download() {
 }
 //
 
-canvas.addEventListener("click", function (e) {
-  if (!document.getElementById("disZoom").checked) {
-    //While not checked, provide the ability to zoom in.
-    magCtx.fillStyle = "white";
-    //magnify.clearRect(0,0, zoom.width, zoom.height);
-    //magnify.fillStyle = "transparent";
-    magCtx.fillRect(0, 0, magnify.width, magnify.height);
-
-    magCtx.drawImage(canvas, e.x, e.y, 200, 100, 0, 0, 400, 200);
-    magCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
-    magnify.style.top = e.pageY + 10 + "px";
-    magnify.style.left = e.pageX + 10 + "px";
-    magnify.style.display = "block";
-  } else {
-    //Do nothing on click.
-    return;
-  }
-});
-
-canvas.addEventListener("mouseout", function () {
-  magnify.style.display = "none";
-});
 
 //Updates and displays numeric range values
 function updateSlider(sliderID) {

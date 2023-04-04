@@ -31,7 +31,7 @@
   <body>
     
     <canvas id="container"> </canvas>
-    <canvas id="magnify"width="400" height="200" style="position:absolute; top:0; left:0; display:none"></canvas>
+  
 
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
@@ -92,13 +92,7 @@
           <button class="js-modal-trigger btn btnMenu" data-target="modalHTU">
            How To Use
           </button>
-          <div class="pretty p-icon p-round p-tada cb">
-            <input id="disZoom"  type="checkbox" value="test"/>
-            <div class="state">
-              <i class="icon fa fa-check"></i>
-              <label>Disable zoom on click</label>
-            </div>
-          </div>
+   
 
           
         </div>
@@ -156,15 +150,15 @@
           Welcome to the Procedural Fractal Tree Generator.<br><br>
           • Use the various components found inside the <b>Tree Properties</b> menu to change the styling of the tree.
           Once these components are altered, a new tree will be procedurally generated.<br><br>
-          • Keep in mind that as your tree gets more complex, generation times can decrease rapidly. The main factor affecting this is the <b>tree length</b>.<br><br>
+          • Keep in mind that as your tree gets more complex, generation times can increase rapidly. The main factor affecting this is the <b>tree length</b>.<br><br>
           • Use the <b>Extras</b> menu to play around with some additional features, including the generation of a completely random tree and downloading an image of a tree you like onto your PC.<br><br>
           • Both of these menus are easily dragabble, allowing you to position them in blank areas to get a better perspective of the current tree.<br><br>
-          • By default, <b>clicking</b> any area on the canvas produces a zoomed in snippet of said area. Use it to inspect the images at an increased level of granularity!<br><br>
+        
           • The <b>undo</b> and <b>redo</b> buttons automatically save tree states, allowing you to go back to a design if you end up liking it. Test it out and go as far back as you would like!
 
         </section>
         <footer class="modal-card-foot has-background-dark has-text-primary-light">
-          For any issues:<br>• Feel free to open an issue on the GitHub repo.<br>• DM me on Discord - Saracen#6210 :)
+          For any issues:<br>• Feel free to open an issue on the GitHub repo.
         </footer>
       </div>
       </div>
@@ -175,11 +169,11 @@
 
 
     <script src="main.js"></script>
-    <script src="rain.js"></script>
+  
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
     <script src="interactions.js"></script>
     <script src="modal.js"></script>
     <script src="text.js"></script>
-    <script src="componentValues.js" type="module"></script>
+
   </body>
 </html>
