@@ -1,5 +1,5 @@
 //Main Canvas Properties
-
+//Inspired by https://www.youtube.com/watch?v=wBAtHDdaZ2Y&t=507s&ab_channel=Frankslaboratory (Fractal Tree tutorial), extended to provide a more interactive experience!
 const canvas = document.getElementById("container");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
